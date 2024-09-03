@@ -1,0 +1,31 @@
+.sidebar {
+    &__content{
+        gap: toRem(50);                                                                 
+    }
+    &__item{
+        gap: toRem(10);
+    }
+}
+
+.suggestion {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    background-color: white; /* Background color for suggestion box */
+    border: 1px solid #ddd; /* Light border around suggestion box */
+    border-radius: 4px; /* Rounded corners */
+    max-width: 300px; /* Optional: max width for suggestion box */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+
+    &__item {
+        padding: 10px 15px; /* Space around each suggestion */
+        cursor: pointer; /* Pointer cursor on hover */
+        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        &:hover {
+            background-color: #f0f0f0; /* Light grey background on hover */
+        }
+    }
+  }
+  
+  
+

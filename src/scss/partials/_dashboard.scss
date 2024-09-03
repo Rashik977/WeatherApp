@@ -1,0 +1,54 @@
+.dashboard {
+    height: 100vh;
+    position: relative;
+
+    &__header {
+        justify-content: space-between;
+        height: toRem(47);
+        position: absolute;
+        width: 100%;
+        padding: toRem(37) toRem(120);
+    }
+
+    &__footer {
+        gap: toRem(20);
+        margin-top: auto;
+        padding: toRem(100);
+        flex-grow: 1;
+    }
+
+    &__sidebar {
+        backdrop-filter: blur(10px);  
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        flex-basis: toRem(700);
+        padding: toRem(131) toRem(200) 0 toRem(35);
+        gap: toRem(50)
+    }
+}
+
+.searchBar {
+    z-index: 10;
+    padding: 10px 40px 10px 15px;
+    background-color: transparent;
+    color: #fff;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    width: toRem(450)
+  }
+
+.search-wrapper{
+    z-index: 10;
+    padding-right: toRem(100);
+}
+
+.search-icon {
+    position: relative;
+    bottom: toRem(42);
+    left: toRem(420);
+    cursor: pointer;
+
+}
+
