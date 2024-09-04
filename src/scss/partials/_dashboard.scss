@@ -3,12 +3,15 @@
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    transition: background-image 0.5s ease-in-out;
+    
 }
 
 
 .dashboard {
     height: 100vh;
     position: relative;
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 100%);
 
     &__header {
         justify-content: space-between;
@@ -16,6 +19,7 @@
         position: absolute;
         width: 100%;
         padding: toRem(37) toRem(120);
+        overflow-x: hidden;
     }
 
     &__footer {
@@ -26,8 +30,8 @@
     }
 
     &__sidebar {
-        backdrop-filter: blur(10px);  
-        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);  
+        background-color: rgba(255, 255, 255, 0);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
         border-left: 1px solid rgba(255, 255, 255, 0.2);
         flex-basis: toRem(700);

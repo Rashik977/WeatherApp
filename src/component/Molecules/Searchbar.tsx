@@ -37,6 +37,7 @@ const Searchbar = (props: ISearch) => {
               className="suggestion__item"
               key={suggestion.id}
               onClick={() => {
+                handleClick();
                 setSearch(suggestion.name);
                 if (hidden.current) hidden.current.style.display = "none";
               }}

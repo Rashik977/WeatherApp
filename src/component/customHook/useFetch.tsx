@@ -12,6 +12,7 @@ function useFetch(url: string | null) {
       url = "";
     }
     try {
+      setError(null);
       const response = await axios(url);
       setData(response.data);
     } catch (error: any) {

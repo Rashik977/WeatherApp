@@ -18,3 +18,16 @@
     justify-content: space-between;
 }
 
+.btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+    border-radius: toRem(10);
+    padding: toRem(10) toRem(20);
+}
+
+.btn:hover{
+    opacity: 0.8;
+}
+

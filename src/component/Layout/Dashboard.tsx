@@ -4,11 +4,13 @@ import useFetch from "../customHook/useFetch";
 import Sidebar from "./Sidebar";
 import DashboardHeader from "../Molecules/DashboardHeader";
 import { WeatherType } from "../data/WeatherType";
+import useBoolean from "../customHook/useBoolean";
 
 const Dashboard = () => {
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState<string | null>(null);
   const dashboardRef = useRef<HTMLDivElement>(null);
+  const { bool, toggle } = useBoolean();
 
   const { data, error } = useFetch(
     `https://api.weatherapi.com/v1/current.json?key=${
@@ -19,10 +21,10 @@ const Dashboard = () => {
   function handleClick() {
     setQuery(search);
   }
+
   useEffect(() => {
     console.log(query);
     if (data) {
-      console.log(data.current.condition.code);
       const keys = Object.keys(WeatherType);
       for (let i = 0; i < keys.length; i++) {
         if (
@@ -30,7 +32,6 @@ const Dashboard = () => {
             data.current.condition.code
           )
         ) {
-          console.log(keys[i]);
           if (dashboardRef.current) {
             dashboardRef.current.style.backgroundImage = `url(backgrounds/${keys[i]}.jpg)`;
           }
@@ -47,8 +48,8 @@ const Dashboard = () => {
         search={search}
       />
       <div className="dashboard flex">
-        <DashboardFooter data={data} />
-        <Sidebar data={data} error={error} />
+        <DashboardFooter data={data} bool={bool} />
+        <Sidebar data={data} error={error} toggle={toggle} bool={bool} />
       </div>
     </main>
   );
