@@ -5,8 +5,13 @@
 5. run 'npm run dev" to start the app
 
 features:
+
 -> Location search and auto search for user Experience.
+
 -> Show Weather condition of the serached city.
+
 -> dynamic background according to weather condition with smooth animation.
+
 -> Degree Celcius and Degree Farnheit conversion button.
+
 -> Error Handling when user enters location that is not available.
